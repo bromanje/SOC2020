@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Wyoming IBC" />
+  <meta name="dcterms.date" content="2019-10-07" />
+  <title>Learning the Basics of Git</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="screen.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Learning the Basics of Git</h1>
+<p class="author">Wyoming IBC</p>
+<p class="date">October 7, 2019</p>
+</header>
+<h2 id="table-of-contents">Table of Contents</h2>
+<p><a href="#What-is-git-and-why-do-we-need-it">1. What is Git and Why do I need it?</a></p>
+<p><a href="#how-does-git-work">2. How does Git work?</a></p>
+<h2 id="what-is-git-and-why-do-i-need-it">1. What is Git and Why do I need it?</h2>
+<ul>
+<li><p>Git is a version control system. Don’t let that make you feel like you are a software engineer. You don’t have to be one for it to be useful to you. In the simplest terms, git keeps a journal of all the changes you will make to any files and folders (create, edit, copy, move, delete etc.) in a given project. Think of it as a virtual assistant that is always listening and keeping track of what you do.</p></li>
+<li><p>GitHub as you probably already figured out, is an online resource that allows people to host and archive their code. The code can be updated/maintained from multiple computers that you may have access to. You may keep it all to yourself, share it with collaborators or if its useful enough, share it with the community at large. Code is divided into repositories on GitHub and you may have one or a hundred each dedicated to a different project you are working on. Consider that you are teaching a course for which you may host the weekly materials such as presentations, assignments and exam solutions to a GitHub repository and then share the repo with your students.</p></li>
+<li><p>As you can see, one doesn’t really need to be a software programmer for Git and GitHub to be useful to them. With this introduction, we are barely scratching the surface. In the Further Reading section below, you will find additional resources to learn about these tools. For now, we will set up your environment so it’s usable today.</p></li>
+</ul>
+<h2 id="how-does-git-work">How does Git work?</h2>
+<ul>
+<li><p>Note For Windows Users: Please install git from https://gitforwindows.org</p></li>
+<li><p>Open the commandline terminal on your system. For Windows, right click and choose Git Bash. For Mac, search for terminal in the spotlight search.</p>
+<center>
+<p><img src="git-bash.png" width=300> <img src="terminal.png" width=400></p>
+</center>
+<p>INSERT IMAGE: git-bash.png (width 300) INSERT IMAGE: terminal.png (width=400)</p></li>
+</ul>
+<p>Check whether git is working on your system:</p>
+<p>git –version</p>
+<p>git version 2.20.1 (Apple Git-117)</p>
+<p>To check git’s documentation i.e. help manual</p>
+<p>man git</p>
+<p>INSERT IMAGE: githelp.png width 750</p>
+<p>To exit the interactive documentation</p>
+<p>q</p>
+<p>Check the Status of the current directory where your prompt is located:</p>
+<p>git status</p>
+<p>fatal: not a git repository (or any of the parent directories): .git</p>
+<p>You haven’t created any git repositories yet on your system, so this warning message is to be expected.</p>
+<p>Let’s create a new repository for testing purposes. First, check where you are on the system, then create a new folder named gitproject.</p>
+<p>pwd</p>
+<p>/Users/wyoibc</p>
+<p>mkdir gitproject</p>
+<p>cd gitproject</p>
+<p>pwd</p>
+<p>/Users/wyoibc/gitproject</p>
+<p>Initiate a new repository</p>
+<p>git init</p>
+<p>Initialized empty Git repository in /Users/wyoibc/gitproject/.git/</p>
+<p>Check the status again</p>
+<p>git status</p>
+<p>On branch master</p>
+<p>No commits yet</p>
+<p>nothing to commit (create/copy files and use “git add” to track)</p>
+<p>This is normal as well since we haven’t yet created any content in here. Now let’s go ahead and create a new file.</p>
+<p>touch README.md</p>
+<p>vim README.md</p>
+<ul>
+<li>Create some content in the file</li>
+</ul>
+<p>This is a new repository.</p>
+<p>Save the changes and exit</p>
+<p>:wq</p>
+<ul>
+<li>Now check the git status again</li>
+</ul>
+<p>git status</p>
+<p>On branch master</p>
+<p>No commits yet</p>
+<p>Untracked files: (use “git add <file>…” to include in what will be committed)</p>
+<pre><code>README.md</code></pre>
+<p>nothing added to commit but untracked files present (use “git add” to track)</p>
+<p>As you can see, Git is now aware of the changes you made to this repository. It knows that there is a new file, although the file is not yet on Git’s roll call. This is by design. Often times, you don’t want every file/folder to be tracked by git. So git only tracks changes in files when you ask it to. Let’s go ahead and do that.</p>
+<p>git add README.md</p>
+<p>git status</p>
+<p>On branch master</p>
+<p>No commits yet</p>
+<p>Changes to be committed: (use “git rm –cached <file>…” to unstage)</p>
+<pre><code>new file:   README.md</code></pre>
+<p>The next logical step here is to <code>commit</code> this file to git and then push the contents of the repository to your GitHub account. But before we get there, we need to do a couple of preparations:</p>
+</body>
+</html>
